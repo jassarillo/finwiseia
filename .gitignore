@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+
+# Entornos virtuales
+venv/
+env/
+ent_finwise/
+
+# Archivos Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Archivos de configuración local
+*.log
+*.env
+*.local
+.env.*
+
+# Archivos y carpetas temporales
+temp/
+media/
+*.mp3
+*.wav
+*.zip
+
+# Archivos grandes que no deberían subirse
+*.dylib
+*.so
+*.dll
+*.exe
+
+# VSCode / IDEs
+.vscode/
+.idea/
+*.swp

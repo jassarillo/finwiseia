@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Por qué FinWise AI? - FinWise AI</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav">
+            <a href="{% url 'CFUNC' %}">Funcionalidades</a>
+            <a href="{% url 'Soporte' %}">Soporte</a>
+            <a href="{% url 'home' %}">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero mt-5 text-center">
+        <div class="hero-content">
+            <h1>¿Por qué elegir FinWise AI?</h1>
+            <p>Optimiza tus decisiones financieras con inteligencia artificial y automatización.</p>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="container mt-5">
+        <h2 class="text-center mb-4">💡 Beneficios de FinWise AI</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>📊 Inteligencia Financiera</h3>
+                <p>Accede a análisis y reportes en tiempo real para una toma de decisiones más estratégica.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>🚀 Automatización Inteligente<h6>(Próximamente)</h6></h3>
+                <p>Reduce errores y optimiza procesos eliminando tareas manuales con IA.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>💰 Ahorro de Costos</h3>
+                <p>Disminuye costos operativos y maximiza la rentabilidad con una gestión financiera eficiente y procesos automatizados</p>
+            </div>
+            <div class="col-md-4">
+                <h3>🔍 Análisis Predictivo<h6>(Próximamente)</h6></h3>
+                <p>Anticipa tendencias y optimiza tu flujo de caja con modelos de inteligencia artificial.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>📈 Crecimiento Sostenible</h3>
+                <p>Mejora tu liquidez y estructura financiera para un crecimiento escalable y rentable.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>📑 Reportes Automatizados</h3>
+                <p>Genera dashboards intuitivos y reportes detallados en segundos.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>🔐 Seguridad y Privacidad</h3>
+                <p>Protegemos tu información con cifrado de datos y estándares de seguridad avanzados.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>🌎 Acceso 24/7</h3>
+                <p>Consulta y gestiona tu información financiera en cualquier momento y lugar.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>⚡ Decisiones Basadas en Datos <h6>(Próximamente)</h6></h3>
+                <p>Recibe recomendaciones estratégicas para mejorar la rentabilidad y eficiencia.</p>
+            </div>
+        </div>
+
+        <!-- Botón de regreso -->
+        <div class="text-center mt-5">
+            <a href="{% url 'PP' %}" class="btn btn-dark">
+                <i class="fa fa-home"></i> Volver a Inicio
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 text-center">
+        <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+        <p class="made-in-mexico">Hecho en México</p>
+    </footer>
+
+</body>
+</html>

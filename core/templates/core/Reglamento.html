@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglamento Interno - FinWise AI</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav">
+            <a href="#funcionalidades">Funcionalidades</a>
+            <a href="{% url 'Soporte' %}">Soporte</a>
+            <a href="{% url 'home' %}">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero mt-5">
+        <div class="hero-content text-center">
+            <h1>Reglamento Interno</h1>
+            <p>Última actualización: 26 de febrero de 2025</p>
+        </div>
+    </section>
+
+    <!-- Contenido del Reglamento Interno -->
+    <section class="rules-content container">
+        <h2>1. Introducción</h2>
+        <p>El presente reglamento interno establece las normas y lineamientos que rigen el uso de la plataforma <strong>FinWiseAI</strong>, así como las responsabilidades de los usuarios, colaboradores y cualquier persona que interactúe con nuestros servicios.</p>
+
+        <h2>2. Uso Adecuado de la Plataforma</h2>
+        <ul>
+            <li>Los usuarios deben proporcionar información veraz y actualizada al registrarse en la plataforma.</li>
+            <li>Está prohibido compartir credenciales de acceso con terceros.</li>
+            <li>El uso de la plataforma debe estar alineado con los principios de transparencia y ética financiera.</li>
+            <li>No se permite el uso indebido de datos ni la manipulación de información financiera con fines fraudulentos.</li>
+        </ul>
+
+        <h2>3. Normas de Conducta</h2>
+        <p>Todos los usuarios de FinWiseAI deben respetar las siguientes normas:</p>
+        <ul>
+            <li>No se permite el uso de lenguaje ofensivo o discriminatorio dentro de la plataforma.</li>
+            <li>El contenido compartido debe estar relacionado con el análisis financiero y cumplimiento normativo.</li>
+            <li>Queda estrictamente prohibido el uso de la plataforma para actividades ilícitas o que contravengan regulaciones de protección de datos.</li>
+        </ul>
+
+        <h2>4. Seguridad y Protección de Datos</h2>
+        <p>Implementamos protocolos de seguridad para garantizar la confidencialidad y protección de la información proporcionada por los usuarios. Entre nuestras medidas de seguridad destacan:</p>
+        <ul>
+            <li>Uso de cifrado para la transmisión de datos sensibles.</li>
+            <li>Autenticación en dos pasos para accesos críticos.</li>
+            <li>Monitoreo continuo para la detección de actividades sospechosas.</li>
+        </ul>
+
+        <h2>5. Sanciones por Incumplimiento</h2>
+        <p>En caso de que un usuario infrinja las normas establecidas en este reglamento, FinWiseAI podrá tomar las siguientes medidas:</p>
+        <ul>
+            <li>Advertencia formal por escrito.</li>
+            <li>Suspensión temporal de la cuenta.</li>
+            <li>Eliminación definitiva del acceso a la plataforma.</li>
+            <li>Notificación a las autoridades correspondientes en casos de fraude o delitos financieros.</li>
+        </ul>
+
+        <h2>6. Modificaciones al Reglamento</h2>
+        <p>Nos reservamos el derecho de modificar este reglamento en cualquier momento. Cualquier cambio será notificado a través de nuestra plataforma y enviado por correo electrónico a los usuarios registrados.</p>
+
+        <h2>7. Contacto</h2>
+        <p>Para dudas o reportes relacionados con este reglamento, los usuarios pueden comunicarse con nuestro equipo en <strong>soporte@finwise.ai</strong>.</p>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'PP' %}" class="btn btn-dark">Volver a Inicio</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+        <p class="made-in-mexico">Hecho en México</p>
+    </footer>
+</body>
+</html>

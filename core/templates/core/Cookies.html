@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies - FinWise AI</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav">
+            <a href="#funcionalidades">Funcionalidades</a>
+            <a href="{% url 'home' %}">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero mt-5">
+        <div class="hero-content text-center">
+            <h1>Política de Cookies</h1>
+            <p>Última actualización: 26 de febrero de 2025</p>
+        </div>
+    </section>
+
+    <!-- Contenido de Política de Cookies -->
+    <section class="cookies-content container">
+        <h2>1. ¿Qué son las cookies?</h2>
+        <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas nuestro sitio web. Nos permiten mejorar tu experiencia de usuario, recordar tus preferencias y personalizar el contenido que ves.</p>
+
+        <h2>2. ¿Para qué usamos cookies?</h2>
+        <p>FinWiseAI utiliza cookies para:</p>
+        <ul>
+            <li>Optimizar el funcionamiento de la plataforma.</li>
+            <li>Recordar tus configuraciones y preferencias.</li>
+            <li>Analizar el tráfico y mejorar nuestros servicios.</li>
+            <li>Personalizar el contenido y publicidad según tus intereses.</li>
+        </ul>
+
+        <h2>3. Tipos de cookies que utilizamos</h2>
+        <ul>
+            <li><strong>Cookies esenciales:</strong> Necesarias para el funcionamiento del sitio web y la autenticación de usuarios.</li>
+            <li><strong>Cookies de análisis:</strong> Nos ayudan a entender cómo los usuarios interactúan con nuestra plataforma.</li>
+            <li><strong>Cookies de personalización:</strong> Permiten recordar tus preferencias y configuraciones.</li>
+            <li><strong>Cookies publicitarias:</strong> Se utilizan para mostrar anuncios relevantes y personalizados.</li>
+        </ul>
+
+        <h2>4. Gestión de cookies</h2>
+        <p>Puedes aceptar, rechazar o configurar el uso de cookies desde la configuración de tu navegador o desde nuestro <strong>Centro de Preferencias de Cookies</strong>.</p>
+
+        <h2>5. ¿Cómo desactivar o eliminar cookies?</h2>
+        <p>Si deseas restringir o bloquear las cookies, puedes hacerlo a través de la configuración de tu navegador. A continuación, te dejamos enlaces con instrucciones para algunos navegadores populares:</p>
+        <ul>
+            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/es/kb/Deshabilitar%20cookies" target="_blank">Mozilla Firefox</a></li>
+            <li><a href="https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies" target="_blank">Internet Explorer</a></li>
+            <li><a href="https://support.apple.com/es-es/HT201265" target="_blank">Safari</a></li>
+        </ul>
+
+        <h2>6. Cambios en la Política de Cookies</h2>
+        <p>FinWiseAI se reserva el derecho de modificar esta Política de Cookies en cualquier momento. Te recomendamos revisar esta página periódicamente para estar informado sobre cualquier actualización.</p>
+
+        <h2>7. Contacto</h2>
+        <p>Si tienes preguntas sobre nuestra Política de Cookies, puedes contactarnos en <strong>soporte@finwise.ai</strong>.</p>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'PP' %}" class="btn btn-dark">Volver a Inicio</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+        <p class="made-in-mexico">Hecho en México</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Funciona - FinWise AI</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav">
+            <a href="{% url 'CFUNC' %}">Funcionalidades</a>
+            <a href="{% url 'Soporte' %}">Soporte</a>
+            <a href="{% url 'home' %}">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero mt-5 text-center">
+        <h1>¿Cómo funciona FinWise AI?</h1>
+        <p>Simplifica la gestión financiera de tu empresa en 3 pasos.</p>
+    </section>
+
+    <!-- Paso a Paso -->
+    <section class="container mt-5 text-center">
+        <h2>📌 Paso a Paso</h2>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <h3>📂 1. Sincroniza o carga tu información</h3>
+                <p>Sube tus estados financieros o conéctate a tu ERP para importar datos automáticamente.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>🤖 2. Análisis con IA <small>(Próximamente)</small></h3>
+                <p>FinWise AI analiza patrones financieros y genera insights en segundos.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>📊 3. Obtén Recomendaciones</h3>
+                <p>Recibe estrategias personalizadas para mejorar rentabilidad y optimizar decisiones.</p>
+            </div>
+        </div>
+
+        <!-- Botón de Regreso -->
+        <div class="mt-5">
+            <a href="{% url 'PP' %}" class="btn btn-dark">
+                <i class="fa fa-home"></i> Volver a Inicio
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 text-center">
+        <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+        <p class="made-in-mexico">Hecho en México</p>
+    </footer>
+
+</body>
+</html>

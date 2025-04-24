@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de Privacidad - FinWise AI</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav">
+            <a href="#funcionalidades">Funcionalidades</a>
+            <a href="{% url 'Soporte' %}">Soporte</a>
+            <a href="{% url 'home' %}">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero mt-5">
+        <div class="hero-content text-center">
+            <h1>Aviso de Privacidad</h1>
+            <p>Protegemos tu información con total transparencia y compromiso.</p>
+        </div>
+    </section>
+
+    <!-- Contenido del Aviso de Privacidad -->
+    <section class="privacy-content container">
+        <h2>I. Introducción</h2>
+        <p>En cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, FinWiseAI, S.A.P.I. de C.V. pone a disposición de sus usuarios este Aviso de Privacidad.</p>
+
+        <h2>II. Datos Recopilados</h2>
+        <p>Recopilamos datos personales como nombre, correo electrónico, domicilio, datos financieros y cualquier otro relevante para la prestación de nuestros servicios de inteligencia financiera.</p>
+
+        <h2>III. Finalidad del Tratamiento</h2>
+        <p>Los datos recopilados se utilizan para mejorar la experiencia del usuario, proporcionar análisis financieros personalizados, integración con ERPs y mejorar nuestros modelos de inteligencia artificial.</p>
+
+        <h2>IV. Protección de Datos</h2>
+        <p>Implementamos medidas de seguridad técnicas y administrativas para garantizar la protección de los datos y prevenir accesos no autorizados.</p>
+
+        <h2>V. Derechos del Usuario</h2>
+        <p>Los usuarios pueden ejercer sus derechos de acceso, rectificación, cancelación u oposición (ARCO) enviando un correo a <strong>soporte@finwise.ai</strong>.</p>
+
+        <h2>VI. Cookies y Tecnologías Similares</h2>
+        <p>Usamos cookies para mejorar la experiencia del usuario, análisis de rendimiento y personalización de anuncios.</p>
+
+        <h2>VII. Transferencia de Datos</h2>
+        <p>Podemos compartir datos con empresas asociadas, proveedores de herramientas analíticas y autoridades cuando sea requerido por ley.</p>
+
+        <h2>VIII. Modificaciones al Aviso</h2>
+        <p>Nos reservamos el derecho de actualizar este Aviso de Privacidad. Cualquier cambio será publicado en nuestra plataforma.</p>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'PP' %}" class="btn btn-dark">Volver a Inicio</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+        <p class="made-in-mexico">Hecho en México</p>
+    </footer>
+</body>
+</html>

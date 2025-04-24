@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte - FinWise AI</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav">
+            <a href="{% url 'CFUNC' %}">Funcionalidades</a>
+            <a href="{% url 'Soporte' %}">Soporte</a>
+            <a href="{% url 'home' %}">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero mt-5 text-center">
+        <div class="hero-content">
+            <h1>Soporte</h1>
+            <p>Estamos aquí para ayudarte. Encuentra soluciones o contáctanos.</p>
+        </div>
+    </section>
+
+    <!-- Contenido de Soporte -->
+    <section class="container mt-4">
+        <h2 class="text-center">📞 ¿Cómo podemos ayudarte?</h2>
+        <div class="row mt-4">
+            <!-- Preguntas Frecuentes -->
+            <div class="col-md-4 text-center">
+                <i class="fa fa-question-circle fa-3x text-primary"></i>
+                <h3 class="mt-3">Preguntas Frecuentes</h3>
+                <p>Consulta nuestras preguntas frecuentes para resolver dudas rápidamente.</p>
+                <a href="{% url 'Preg_Freqs' %}" class="btn btn-dark">Ver FAQ</a>
+            </div>
+
+            <!-- Soporte Técnico -->
+            <div class="col-md-4 text-center">
+                <i class="fa fa-tools fa-3x text-primary"></i>
+                <h3 class="mt-3">Soporte Técnico</h3>
+                <p>¿Tienes problemas técnicos? Nuestro equipo está listo para ayudarte.</p>
+                <a href="mailto:soporte@finwise.ai" class="btn btn-dark">Contactar Soporte</a>
+            </div>
+
+            <!-- Reportar un Problema -->
+            <div class="col-md-4 text-center">
+                <i class="fa fa-bug fa-3x text-primary"></i>
+                <h3 class="mt-3">Reportar un Problema</h3>
+                <p>Si detectaste un error, avísanos para que podamos solucionarlo.</p>
+                <a href="mailto:bugs@finwise.ai" class="btn btn-dark">Reportar Error</a>
+            </div>
+        </div>
+
+        <!-- Información de Contacto -->
+        <div class="text-center mt-5">
+            <h2>📞 Contacto</h2>
+            <p>Si no encuentras la respuesta que buscas, llamanos.</p>
+            <div class="mt-4">
+                <p><a href="tel:+52 5564143196" class="text-dark"><i class="fa fa-phone"></i>Teléfono: +52 5564143196</a></p>
+            </div>
+        </div>
+
+        <!-- Botón de Regreso a Inicio -->
+        <div class="text-center mt-5">
+            <a href="{% url 'PP' %}" class="btn btn-outline-dark btn-lg">
+                <i class="fa fa-home"></i> Volver a Inicio
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 text-center">
+        <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+        <p class="made-in-mexico">Hecho en México</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

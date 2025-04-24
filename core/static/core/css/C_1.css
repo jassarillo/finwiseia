@@ -1,0 +1,37 @@
+:root {
+    --dark: #000000;
+    --dark-x: #000000;
+    --light: #ffffff;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 300;
+    color: var(--light);
+}
+
+.bg-dark { background-color: var(--dark) !important;}
+.bg-dark-x { background-color: var(--dark-x);}
+
+.form-control, .btn {
+    min-height: 3.125rem;
+    line-height: initial;
+}
+
+.imag-3 {
+    background-image: url("../images/F_W_3.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.casa {
+    background-image: url("../images/F_W_2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.appll {
+    background-image: url("../images/F_PRINCIP.png");
+    background-size: cover;
+    background-position: center;
+}

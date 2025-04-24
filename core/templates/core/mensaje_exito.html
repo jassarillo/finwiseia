@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por Contactarnos! - FinWise AI</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Contenedor centrado para Fini */
+        .fini-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Avatar de Fini */
+        .fini-avatar {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .fini-avatar video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer fijo abajo */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav">
+            <a href="{% url 'CFUNC' %}">Funcionalidades</a>
+            <a href="{% url 'Soporte' %}">Soporte</a>
+            <a href="{% url 'home' %}">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- Mensaje de Éxito -->
+    <section class="hero mt-5">
+        <div class="fini-container">
+            <h1 class="mt-4">¡Gracias por Contactarnos! 🎉</h1>
+            <p id="fini-text">Hemos recibido tu solicitud y en breve uno de nuestros asistentes se comunicará contigo.</p>
+            
+            <!-- Avatar de Fini -->
+            <div class="fini-avatar" id="fini-avatar">
+                <video id="fini-video" autoplay loop muted>
+                    <source src="{% static 'core/videos/VIDEOAV.mp4' %}" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de Regreso a Inicio -->
+    <div class="text-center mt-5">
+        <a href="{% url 'PP' %}" class="btn btn-dark">
+            <i class="fa fa-home"></i> Volver a Inicio
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+        <p class="made-in-mexico">Hecho en México</p>
+    </footer>
+
+    <!-- JavaScript para que Fini hable automáticamente con voz natural -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("🚀 DOM completamente cargado, esperando voces...");
+
+            function showFini(name, text) {
+                console.log(`🎬 Iniciando showFini() para: ${name}`);
+
+                const avatar = document.getElementById("fini-avatar");
+                if (avatar) {
+                    avatar.style.display = "block";
+                    avatar.style.visibility = "visible";
+                    avatar.style.opacity = "1";
+                }
+
+                speakWithTTS(text);
+            }
+
+            function getBestSpanishVoice() {
+                let voices = window.speechSynthesis.getVoices();
+
+                // Selecciona la mejor voz disponible en español
+                let selectedVoice = voices.find(voice => voice.name.includes("Microsoft Paulina") && voice.lang === "es-MX") 
+                    || voices.find(voice => voice.name.includes("Google") && voice.lang.startsWith("es-"))
+                    || voices.find(voice => voice.lang.startsWith("es-"))
+                    || voices[0];
+
+                console.log("📢 Voz seleccionada:", selectedVoice ? selectedVoice.name : "No disponible");
+                return selectedVoice;
+            }
+
+            function speakWithTTS(text) {
+                if (!window.speechSynthesis) {
+                    console.error("❌ Error: Tu navegador no soporta la API de síntesis de voz.");
+                    return;
+                }
+
+                let speech = new SpeechSynthesisUtterance(text);
+                speech.voice = getBestSpanishVoice();
+                speech.lang = "es-MX";
+                speech.rate = 0.95;
+                speech.pitch = 1.1;
+                speech.volume = 1.0;
+
+                speech.onstart = function () {
+                    console.log("🔊 Fini está hablando...");
+                };
+
+                speech.onend = function () {
+                    console.log("✅ Fini terminó de hablar.");
+                };
+
+                window.speechSynthesis.speak(speech);
+            }
+
+            function waitForVoices() {
+                if (window.speechSynthesis.getVoices().length > 0) {
+                    console.log("✅ Voces ya cargadas. Iniciando showFini...");
+                    showFini("Confirmación", "Gracias, en breve uno de nuestros asistentes se comunicará contigo.");
+                } else {
+                    console.log("⏳ Esperando a que las voces se carguen...");
+                    window.speechSynthesis.onvoiceschanged = function () {
+                        console.log("✅ Voces cargadas. Llamando a showFini...");
+                        showFini("Confirmación", "Gracias, en breve uno de nuestros asistentes se comunicará contigo.");
+                    };
+                }
+            }
+
+            waitForVoices();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinWise AI - Inteligencia Financiera</title>
+    <!-- Importar el archivo CSS externo -->
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav" id="mobileMenu">
+            <a href="{% url 'CFUNC' %}">Funcionalidades</a>
+            <a href="{% url 'Soporte' %}">Soporte</a>
+            <a href="{% url 'home_f' %}">Iniciar Sesión</a>
+        </nav>
+    
+
+    </header>
+
+<!-- Hero Section -->
+<section class="hero mt-5">
+    <button class="fini-btn" onclick="showFini('hero')">📢 Hablar con Fini</button>
+
+    <div class="hero-content">
+        <h1 id="typewriter-text"></h1> <!-- Texto dinámico -->
+        <p>FinWise AI optimiza la toma de decisiones financieras para empresas, integrándose con ERPs y proporcionando análisis inteligentes en tiempo real.</p>
+        <button class="cta-btn" onclick="document.querySelector('.contact-section').scrollIntoView({ behavior: 'smooth' });">Solicitar una demo</button>
+    </div>
+
+    <!-- Imagen con clase específica -->
+    <div class="hero-image">
+        <img src="{% static 'core/images/FIN.png' %}" alt="FinWise AI Ilustración" style="width: 300px; height: auto;">
+    </div>
+</section>
+
+    
+
+ <!-- Features -->
+<section class="features-section" id="funcionalidades">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h2 id="typewriter-func"></h2> <!-- Texto dinámico -->
+            <p id="typewriter-prod"></p> <!-- Texto dinámico -->
+        </div>
+        <button class="fini-btn" onclick="showFini('features')">📢 Hablar con Fini</button>
+    </div>
+
+    <section class="features">
+        <div class="feature">
+            <h3><span class="feature-icon">📂</span>Gestión de Datos Financieros</span></h3>
+            <p>Carga manual o automática desde ERPs, con análisis de información histórica para mejorar la precisión financiera.</p>
+            <button class="learn-more-btn">🔍 Ver más</button>
+        </div>
+
+        <div class="feature">
+            <h3><span class="feature-icon">📑</span> Gestión de Presupuestos</h3>
+            <p>Simulación y planificación financiera para mantener un control eficiente de los recursos.</p>
+            <button class="learn-more-btn">🔍 Ver más</button>
+        </div>
+
+        <div class="feature">
+            <h3><span class="feature-icon">🤖</span> Inteligencia Predictiva</h3>
+            <h6>(Próximamente)</h6>
+            <p>Analiza tendencias y patrones financieros para tomar decisiones informadas en tiempo real.</p>
+            <button class="learn-more-btn">🔍 Ver más</button>
+        </div>
+        
+        <div class="feature">
+            <h3><span class="feature-icon">💰</span> Optimización de Liquidez</h3>
+            <p>Mejora la gestión del flujo de caja con recomendaciones basadas en datos históricos y proyecciones.</p>
+            <button class="learn-more-btn">🔍 Ver más</button>
+        </div>
+        
+        <div class="feature">
+            <h3><span class="feature-icon">🧠</span> Asistente Virtual Financiero</h3>
+            <h6>(Próximamente)</h6>
+            <p>Un avatar IA que responde preguntas y ayuda a interpretar datos financieros en tiempo real.</p>
+            <button class="learn-more-btn">🔍 Ver más</button>
+        </div>
+        
+        <div class="feature">
+            <h3><span class="feature-icon">📊</span> Dashboards & KPIs</h3>
+            <p>Monitorea KPIs en tiempo real con dashboards intuitivos y reportes automatizados para decisiones más estratégicas.</p>
+            <button class="learn-more-btn">🔍 Ver más</button>
+        </div>
+              
+    </section>
+</section>
+
+<!-- Botón "Hablar con Fini" alineado a la derecha -->
+<div class="d-flex justify-content-end align-items-start" style="width: 100%;">
+    <button class="btn btn-dark fini-btn" id="fini-demo-btn">
+        📢 Hablar con Fini
+    </button>
+</div>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <h2 id="typewriter-contact"></h2>
+    <p id="typewriter-I"></p>
+
+    <!-- Mostrar errores si existen -->
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form class="contact-form" id="demo-form" method="POST" action="{% url 'contacto_empresa' %}">
+        {% csrf_token %}
+        <input type="text" name="empresa" placeholder="Empresa" required>  <!-- ✅ Campo corregido -->
+        <input type="text" name="nombre" placeholder="Nombre Completo" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+
+        <!-- Selector de País y Número de Teléfono en una fila -->
+        <div class="mb-3">
+            <div class="input-group">
+                <select class="form-select" name="country_code" style="max-width: 120px;"> <!-- ✅ Se agregó name -->
+                    <option value="+52">🇲🇽 +52</option>
+                    <option value="+55">🇧🇷 +55</option>
+                    <option value="+506">🇨🇷 +506</option>
+                    <option value="+593">🇪🇨 +593</option>
+                    <option value="+57">🇨🇴 +57</option>
+                </select>
+                <input type="tel" class="form-control" name="phone_number" placeholder="Número de teléfono"> <!-- ✅ Se agregó name -->
+            </div>
+        </div>
+                      
+        <select name="role" required>
+            <option value="" disabled selected>Selecciona tu rol</option>
+            <option value="CEO">CEO / Fundador</option>
+            <option value="CFO">CFO / Finanzas</option>
+            <option value="Contralor">Contralor Financiero</option>
+            <option value="Analista">Analista Financiero</option>
+            <option value="Otro">Otro</option>
+        </select>
+
+        <!-- Nuevo campo: Número de empleados -->
+        <select name="employees" required>
+            <option value="" disabled selected>Número aproximado de empleados</option>
+            <option value="1-10">1 - 10</option>
+            <option value="11-50">11 - 50</option>
+            <option value="51-200">51 - 200</option>
+            <option value="201-500">201 - 500</option>
+            <option value="501-1000">501 - 1000</option>
+            <option value="1000+">Más de 1000</option>
+        </select>
+
+        <textarea name="mensaje" placeholder="¿Cómo podemos ayudarte?" rows="4" required></textarea> <!-- ✅ Campo corregido -->
+        <button type="submit" class="contact-btn" id="solicitar-demo-btn">Solicitar una Demo</button>
+    </form>
+</section>
+
+
+
+    <!-- Equipo -->
+    <section class="team-section" id="equipo">
+        <h2 id="typewriter-founders"></h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="{% static 'core/images/Ro.jpeg' %}" alt="Rodrigo">
+                <h3>Rodrigo</h3>
+                <p>Co-Fundador, CEO - Experto en producto, inteligencia artificial financiera, y automatización.</p>
+                <button class="fini-btn-member" id="btn-rodrigo" onclick="document.getElementById('fini-audio').play()">🔍 Conoce a Rodrigo</button>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'core/images/erick.jpeg' %}" alt="Erick">
+                <h3>Erick</h3>
+                <p>Co-Fundador, CFO - Especialista en gestión de riesgo, Planeación Financiera y liquidez.</p>
+                <button class="fini-btn-member" id="btn-erick" onclick="document.getElementById('fini-audio').play()">🔍 Conoce a Erick</button>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'core/images/alex.jpeg' %}" alt="Alejandro">
+                <h3>Alejandro</h3>
+                <p>Co-Fundador, CCO - Estratega enfocado en crecimiento y expansión de mercado.</p>
+                <button class="fini-btn-member" id="btn-alejandro" onclick="document.getElementById('fini-audio').play()"> 🔍 Conoce a Alejandro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del Equipo de Desarrollo -->
+<section class="team-section" id="equipo-desarrollo">
+    <h2 id="typewriter-dev"></h2>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="{% static 'core/images/Raúl.jpeg' %}" alt="Raúl">
+            <h3>Raúl</h3>
+            <p>Especialista en Backend y arquitecturas de software escalables.</p>
+            <button class="fini-btn-member" id="btn-Raúl" onclick="document.getElementById('fini-audio').play()">🔍 Conoce a Raúl</button>
+        </div>
+        <div class="team-member">
+            <img src="{% static 'core/images/Serch.jpeg' %}" alt="Sergio">
+            <h3>Sergio</h3>
+            <p>Experto en Inteligencia Artificial, Modelos de Machine Learning y Negocios.</p>
+            <button class="fini-btn-member" id="btn-Sergio" onclick="document.getElementById('fini-audio').play()">🔍 Conoce a Sergio</button>
+        </div>
+        <div class="team-member">
+            <img src="{% static 'core/images/Julio.jpeg' %}" alt="Julio">
+            <h3>Julio</h3>
+            <p>Desarrollador Frontend con experiencia en UI/UX y optimización de interfaces.</p>
+            <button class="fini-btn-member" id="btn-Julio" onclick="document.getElementById('fini-audio').play()"> 🔍 Conoce a Julio</button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Avatar flotante de Fini -->
+    <div id="fini-avatar" class="fini-avatar">
+        <video id="fini-video" autoplay loop muted playsinline webkit-playsinline>
+            <source id="fini-video-source" src="{% static 'core/videos/VIDEOAV2.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Elemento oculto con las rutas de video -->
+    <div id="video-routes"
+    data-default="{% static 'core/videos/VIDEOAV2.mp4' %}"
+    data-rodrigo="{% static 'core/videos/rodrigo.mp4' %}"
+    data-erick="{% static 'core/videos/erick.mp4' %}"
+    data-alejandro="{% static 'core/videos/alejandro.mp4' %}">
+    </div>
+
+    <!-- Sección Footer Expandido -->
+<section class="footer-info">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>Clientes</h4>
+            <ul>
+                <li><a href="{% url 'PFIN' %}">¿Por qué Finwise AI?</a></li>
+                <li><a href="{% url 'CFUNC' %}">Cómo funciona</a></li>
+                <li><a href="{% url 'Preg_Freqs' %}">Preguntas Frecuentes</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h4>Empresas</h4>
+            <ul>
+                <li><a href="{% url 'Soporte' %}">Soporte</a></li>
+                <li><a href="{% url 'At_Em'%}">Atención a Empresas</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="{% url 'Cookies' %}">Política de Cookies</a></li>
+                <!--<li><a href="{% url 'Terms' %}">Términos y Condiciones</a></li>-->
+                <!--<li><a href="{% url 'Aviso' %}">Aviso de Privacidad</a></li>-->
+                <!--<li><a href="{% url 'Reglamento' %}">Reglamento Interno</a></li>-->
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>FinWise AI</h4>
+            <ul>
+                <li><a href="{% url 'Mi' %}">Nuestra Misión</a></li>
+                <li><a href="{% url 'BlogF' %}">Blog</a></li>
+                <!--<li><a href="#">Trabaja con Nosotros</a></li> --> <!-- Aun no -->
+            </ul>
+        </div>
+
+        <div class="footer-column social-media">
+            <h4>Síguenos</h4>
+            <div class="social-icons">
+                <a href="#" target="_blank" class="facebook"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://www.instagram.com/finwiseai" target="_blank" class="instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://www.linkedin.com/company/finwise-ai/?viewAsMember=true" target="_blank" class="linkedin"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#" target="_blank" class="tiktok"><i class="fab fa-tiktok fa-2x"></i></a>
+            </div>
+        </div>        
+        
+    </div>
+</section>
+
+
+    <!-- Footer -->
+<footer class="footer">
+    <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+    <p class="made-in-mexico">Hecho en México</p>
+</footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("🚀 DOM completamente cargado, asignando eventos a botones.");
+    
+            // Evento para el botón de "Hablar con Fini" en la descripción general
+            document.querySelector(".hero .fini-btn")?.addEventListener("click", function () {
+                console.log("🟢 Botón 'Hablar con Fini' presionado.");
+                showFini("General", "Bienvenido a FinWise AI, la plataforma que transforma la gestión financiera con inteligencia artificial. Nuestra tecnología está diseñada para empresas que buscan optimizar su toma de decisiones financieras en tiempo real. A través de la integración con ERPs y el análisis avanzado de datos");
+            });
+    
+            // Evento para el botón de "Hablar con Fini" en Funcionalidades
+            document.querySelector(".features-section .fini-btn")?.addEventListener("click", function () {
+                console.log("🟢 Botón 'Hablar con Fini' en Funcionalidades presionado.");
+                showFini("Funcionalidades", "FinWise AI ofrece herramientas diseñadas para optimizar la gestión financiera de tu empresa, permitiendo la carga automática o manual y análisis inteligente de datos financieros desde ERPs, facilitando decisiones informadas en tiempo real. Con algoritmos de inteligencia predictiva, podemos detectar patrones en el comportamiento de tus finanzas y proporcionar alertas sobre riesgos u oportunidades. Además, nuestra optimización de liquidez te ayuda a planificar estrategias financieras más sólidas. Y con nuestro asistente virtual basado en IA, tendrás acceso a respuestas instantáneas sobre métricas clave y reportes automatizados.");
+            });
+
+            // Evento para el botón de "Hablar con Fini" en el formulario
+            document.getElementById("fini-demo-btn")?.addEventListener("click", function () {
+                console.log("🟢 Botón 'Hablar con Fini' en el formulario presionado.");
+                showFini("Demo", "A través de este formulario,podrás solicitar una demo personalizada dondeuno denuestrosespecialistas te asesorará sobrecómoFinWise puede llevar tus finanzas al siguiente nivel.");
+            });
+    
+            // Eventos para los botones de los fundadores
+            document.getElementById("btn-rodrigo")?.addEventListener("click", function () {
+                console.log("🟢 Botón 'Conoce a Rodrigo' presionado.");
+                showFini("Rodrigo", "Rodrigo es nuestro Chief Executive Officer, experto en desarrollo de producto, inteligencia artificial financiera, y automatización.");
+            });
+    
+            document.getElementById("btn-erick")?.addEventListener("click", function () {
+                console.log("🟢 Botón 'Conoce a Erick' presionado.");
+                showFini("Erick", "Erick es nuestro Chief Financial Officer, especialista en gestión de riesgo, optimización de planeación Financiera y liquidez");
+            });
+    
+            document.getElementById("btn-alejandro")?.addEventListener("click", function () {
+                console.log("🟢 Botón 'Conoce a Alejandro' presionado.");
+                showFini("Alejandro", "Alejandro es nuestro Chief Comercial Officer, Estratega encargado del crecimiento y expansión de mercado.");
+            });
+
+            document.getElementById("btn-Raúl")?.addEventListener("click", function () {
+                console.log("🟢 Botón 'Conoce a Raúl' presionado.");
+                showFini("Raúl", "Raúl es nuestro Especialista en Backend y arquitecturas de software escalables, cuenta con más de 10 años de experiencia");
+            });
+
+            document.getElementById("btn-Julio")?.addEventListener("click", function () {
+                console.log("🟢 Botón 'Conoce a Julio' presionado.");
+                showFini("Julio", "Julio es nuestro Desarrollador Frontend con experiencia en UI/UX y optimización de interfaces., cuenta con más de 10 años de experiencia");
+            });
+
+            document.getElementById("btn-Sergio")?.addEventListener("click", function () {
+                console.log("🟢 Botón 'Conoce a Sergio' presionado.");
+                showFini("Sergio", "Sergio es nuestro Experto en Inteligencia Artificial, Modelos de Machine Learning y Negocios., cuenta con más de 16 años de experiencia");
+            });
+        });
+    
+        function showFini(name, text) {
+            console.log(`🎬 Iniciando showFini() para: ${name}`);
+        
+            const avatar = document.getElementById("fini-avatar");
+            const video = document.getElementById("fini-video");
+            const videoSource = document.getElementById("fini-video-source");
+            const audioElement = document.getElementById("fini-audio");
+        
+            if (!avatar || !video || !videoSource || !audioElement) {
+                console.error("❌ Error: No se encontraron elementos del DOM necesarios.");
+                return;
+            }
+        
+            if (!text || text.trim() === "") {
+                console.error("❌ Error: No se proporcionó un texto válido para Fini.");
+                return;
+            }
+        
+            // Detener cualquier audio en curso antes de iniciar uno nuevo
+            window.speechSynthesis.cancel();
+            audioElement.pause();
+            audioElement.currentTime = 0;
+        
+            // Ruta del video de Fini (SIEMPRE EL MISMO)
+            const videoPath = "{% static 'core/videos/VIDEOAV2.mp4' %}";
+        
+            console.log(`🎥 Configurando video de Fini: ${videoPath}`);
+        
+            if (videoSource.getAttribute("src") !== videoPath) {
+                videoSource.setAttribute("src", videoPath);
+                video.load();
+                video.play()
+                    .then(() => console.log("✅ Video de Fini reproduciéndose correctamente."))
+                    .catch(err => console.error("⚠️ Error al reproducir el video:", err));
+            }
+        
+            // Mostrar avatar de Fini
+            avatar.style.display = "block";
+            avatar.style.visibility = "visible";
+            avatar.style.opacity = "1";
+        
+            // Usar síntesis de voz si no hay audio desde el backend
+            console.log(`🎤 Solicitando audio al backend para: ${name}`);
+        
+            fetch(`/generate-audio/?text=${encodeURIComponent(text)}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("📡 JSON de respuesta recibido:", data);
+        
+                    if (data.audio_url) {
+                        console.log(`🔊 Audio recibido: ${data.audio_url}`);
+                        audioElement.src = data.audio_url;
+        
+                        // Intentar reproducir el audio con interacción del usuario
+                        const playPromise = audioElement.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.warn("⚠️ El navegador bloqueó el autoplay. Reproduciendo manualmente...");
+                                document.body.addEventListener("click", () => {
+                                    audioElement.play();
+                                }, { once: true });
+                            });
+                        }
+                    } else {
+                        console.warn("⚠️ No se recibió audio del backend, usando síntesis de voz.");
+                        speakWithTTS(text);
+                    }
+                })
+                .catch(error => {
+                    console.error("⚠️ Error en la petición de audio:", error);
+                    speakWithTTS(text);
+                });
+        }
+        
+        // Función auxiliar para hablar usando la API de síntesis de voz del navegador
+        function speakWithTTS(text) {
+            window.speechSynthesis.cancel(); // Cancelar cualquier discurso en progreso
+        
+            let speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            speech.lang = "es-ES"; // Configurar idioma a español
+            speech.rate = 1; // Velocidad normal de voz
+        
+            window.speechSynthesis.speak(speech);
+        }
+        
+    
+        function hideFini() {
+            console.log("👀 Ocultando avatar de Fini...");
+            const avatar = document.getElementById("fini-avatar");
+    
+            if (!avatar) {
+                console.error("❌ Error: No se encontró el avatar de Fini.");
+                return;
+            }
+    
+            avatar.style.display = "none";
+            avatar.style.visibility = "hidden";
+            avatar.style.opacity = "0";
+    
+            console.log("👤 Fini ocultado correctamente.");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            function typeEffect(elementId, text, speed = 100) {
+                const textElement = document.getElementById(elementId);
+                let index = 0;
+        
+                function writeText() {
+                    if (index < text.length) {
+                        textElement.innerHTML += text[index];
+                        index++;
+                        setTimeout(writeText, speed);
+                    }
+                }
+        
+                return writeText;
+            }
+        
+            // Aplicar el efecto de escritura solo cuando la sección es visible
+            function observeElement(elementId, callback) {
+                const element = document.getElementById(elementId);
+                if (!element) return;
+        
+                const observer = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                callback();
+                                observer.disconnect(); // Detener la observación después de activarse una vez
+                            }
+                        });
+                    },
+                    { threshold: 0.6 } // El 60% del elemento debe ser visible antes de activarse
+                );
+        
+                observer.observe(element);
+            }
+        
+            // Inicia el efecto de escritura en el Hero inmediatamente
+            typeEffect("typewriter-text", "Transformando la gestión financiera con IA", 60)();
+        
+            // Espera a que la sección "Conoce a nuestros Fundadores" sea visible
+            observeElement("typewriter-founders", typeEffect("typewriter-founders", "Conoce a nuestros Fundadores", 90));
+            observeElement("typewriter-contact", typeEffect("typewriter-contact", "Únete a FinWise AI", 90));
+            observeElement("typewriter-I", typeEffect("typewriter-I", "Déjanos tus datos y nuestro equipo se pondrá en contacto contigo.", 30));
+            observeElement("typewriter-func", typeEffect("typewriter-func", "Funcionalidades", 80));
+            observeElement("typewriter-prod", typeEffect("typewriter-prod", "Descubre las herramientas clave de FinWise AI.", 30));
+            observeElement("typewriter-dev", typeEffect("typewriter-dev", "Conoce al Equipo de Desarrollo", 70));
+        });
+              
+        
+        document.getElementById("email-form").addEventListener("submit", function(event) {
+            let emailInput = document.getElementById("email").value;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para emails válidos
+    
+            if (!emailPattern.test(emailInput)) {
+                alert("Por favor, introduce un correo electrónico válido.");
+                event.preventDefault(); // Evita que el formulario se envíe si el email es inválido
+            }
+        });
+
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("✅ DOM completamente cargado.");
+    
+            let demoForm = document.getElementById("demo-form");
+            let ctaBtn = document.querySelector(".cta-btn");  // Botón de "Solicitar una demo" en Hero
+    
+            // 📌 Asegurar que el botón en la sección Hero haga focus en el formulario
+            if (ctaBtn) {
+                ctaBtn.addEventListener("click", function () {
+                    let contactSection = document.querySelector(".contact-section");
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("name")?.focus(); // Poner focus en el primer input del formulario
+                    }
+                });
+            } else {
+                console.warn("⚠️ No se encontró el botón 'Solicitar una Demo' en Hero.");
+            }
+    
+            // 📌 Evento de envío de formulario con validaciones
+            if (demoForm) {
+                demoForm.addEventListener("submit", function (event) {
+                    event.preventDefault(); // Evita que el formulario se envíe realmente
+    
+                    console.log("🚀 Formulario enviado con éxito.");
+                    alert("Gracias, en breve un especialista se comunicará contigo."); // Muestra el mensaje de confirmación
+    
+                    // Limpiar el formulario después de enviar
+                    demoForm.reset();
+                });
+    
+                console.log("✅ Evento de envío de formulario asignado correctamente.");
+            } else {
+                console.error("❌ No se encontró el formulario con id 'demo-form'. Verifica el HTML.");
+            }
+        });
+        
+
+        
+    </script>
+    
+    <audio id="fini-audio" hidden></audio>
+    
+
+
+</body>
+</html>

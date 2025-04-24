@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h2{
+    text-align: center;
+    padding: 20px;
+}
+#principal{
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color:#fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body{
+    min-height: 100vh;
+    background: url("../images/inmob.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+div.main{
+    width: 500px;
+    margin: 100px auto 0px auto;
+}
+
+
+
+
+
+
+
+
+

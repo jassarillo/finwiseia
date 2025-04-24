@@ -1,0 +1,61 @@
+:root {
+    --dark: #000000;
+    --dark-x: #000000;
+    --light: #ffffff;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 300;
+    color: var(--light);
+}
+
+.bg-dark { background-color: var(--dark) !important;}
+.bg-dark-x { background-color: var(--dark-x);}
+
+.form-control {
+    background-color: #fff;  /* Color de fondo de los campos */
+    border: 1px solid #ccc;  /* Color del borde */
+    color: #000;             /* Color del texto */
+    padding: 10px;           /* Espacio dentro de los campos */
+    font-size: 1rem;         /* Tamaño de la fuente */
+    border-radius: 5px;      /* Bordes redondeados */
+}
+
+.btn-primary {
+    background-color: #007bff;  /* Color del botón */
+    border: none;               /* Quitar bordes */
+    color: white;               /* Color del texto */
+    padding: 10px 20px;         /* Espacio dentro del botón */
+    font-size: 1rem;            /* Tamaño de la fuente */
+    border-radius: 5px;         /* Bordes redondeados */
+}
+
+.form-control:focus, .btn-primary:focus {
+    box-shadow: none;          /* Quitar sombra de foco */
+    outline: none;             /* Quitar borde de foco */
+}
+
+
+.form-control, .btn {
+    min-height: 3.125rem;
+    line-height: initial;
+}
+
+.imag-3 {
+    background-image: url("../images/F_W_3.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.casa {
+    background-image: url("../images/F_W_2.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.appll {
+    background-image: url("../images/F_PRINCIP.png");
+    background-size: cover;
+    background-position: center;
+}

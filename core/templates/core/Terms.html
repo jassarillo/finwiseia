@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - FinWise AI</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav">
+            <a href="#funcionalidades">Funcionalidades</a>
+            <a href="{% url 'Soporte' %}">Soporte</a>
+            <a href="{% url 'home' %}">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero mt-5">
+        <div class="hero-content text-center">
+            <h1>Términos y Condiciones</h1>
+            <p>Última actualización: 26 de febrero de 2025</p>
+        </div>
+    </section>
+
+    <!-- Contenido de Términos y Condiciones -->
+    <section class="terms-content container">
+        <h2>I. Introducción</h2>
+        <p>Bienvenido a FinWiseAI. Al utilizar nuestra Plataforma, aceptas los presentes Términos y Condiciones. Si no estás de acuerdo, por favor no utilices nuestros servicios.</p>
+
+        <h2>II. Definiciones</h2>
+        <p>Para efectos de este documento, los términos en mayúsculas tendrán el siguiente significado:</p>
+        <ul>
+            <li><strong>FinWiseAI:</strong> Plataforma de análisis financiero automatizado.</li>
+            <li><strong>Usuario:</strong> Persona física o moral que utiliza los servicios de FinWiseAI.</li>
+            <li><strong>Servicios:</strong> Análisis de datos financieros, inteligencia artificial aplicada y visualización de dashboards.</li>
+            <li><strong>Cuenta de Usuario:</strong> Perfil creado para acceder a los servicios.</li>
+        </ul>
+
+        <h2>III. Uso de la Plataforma</h2>
+        <p>El usuario deberá registrarse y proporcionar información veraz. FinWiseAI se reserva el derecho de suspender cuentas que incumplan estos términos.</p>
+
+        <h2>IV. Obligaciones del Usuario</h2>
+        <ul>
+            <li>Utilizar la Plataforma para fines legales y empresariales.</li>
+            <li>Garantizar la confidencialidad de sus credenciales.</li>
+            <li>No intentar acceder a datos de otros usuarios sin autorización.</li>
+        </ul>
+
+        <h2>V. Servicios Ofrecidos</h2>
+        <ul>
+            <li>Análisis de balances financieros y generación de insights.</li>
+            <li>Recomendaciones con inteligencia artificial.</li>
+            <li>Dashboards personalizados para la toma de decisiones.</li>
+            <li>Integración con sistemas ERP.</li>
+        </ul>
+
+        <h2>VI. Privacidad y Protección de Datos</h2>
+        <p>La información del usuario será utilizada exclusivamente para los fines indicados en nuestro <a href="{% url 'Aviso' %}">Aviso de Privacidad</a>.</p>
+
+        <h2>VII. Propiedad Intelectual</h2>
+        <p>Todos los contenidos, software y elementos gráficos de FinWiseAI son propiedad exclusiva de la empresa. Queda prohibida su reproducción sin autorización.</p>
+
+        <h2>VIII. Responsabilidad y Limitaciones</h2>
+        <ul>
+            <li>FinWiseAI no se hace responsable por decisiones financieras tomadas con base en sus recomendaciones.</li>
+            <li>El servicio puede no estar disponible temporalmente por mantenimiento o fallas técnicas.</li>
+            <li>No nos hacemos responsables por herramientas de terceros integradas en la Plataforma.</li>
+        </ul>
+
+        <h2>IX. Modificaciones y Terminación</h2>
+        <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. La versión más reciente siempre estará disponible en nuestro sitio web.</p>
+
+        <h2>X. Legislación y Jurisdicción</h2>
+        <p>Estos términos se rigen por la legislación mexicana. Para cualquier disputa, el usuario se somete a los tribunales de la Ciudad de México.</p>
+
+        <h2>XI. Contacto</h2>
+        <p>Para dudas o aclaraciones, contáctanos en: <strong>soporte@finwise.ai</strong></p>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'PP' %}" class="btn btn-dark">Volver a Inicio</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+        <p class="made-in-mexico">Hecho en México</p>
+    </footer>
+</body>
+</html>

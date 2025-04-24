@@ -1,0 +1,676 @@
+/* Estilos generales */
+/* Ajuste del body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8eae8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header fijo en la parte superior */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px; /* Aumenta el padding */
+    background-color: #000000;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 60px; /* Ajusta la altura */
+}
+
+/* Ajuste del logo dentro del header */
+.header .logo img {
+    width: 60px;  /* Tamaño más grande del logo */
+    height: 60px;
+}
+
+/* 🚀 Asegurar que el contenido no quede debajo del header */
+main, .container, .hero {
+    margin-top: 110px; /* Ajustar margen superior según la altura del header */
+}
+
+
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sección Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    background-color: #cbe5cb;
+    text-align: left;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #000000;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Imagen de la derecha */
+.hero-image {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cta-btn {
+    background-color: #000000;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Botón "Hablar con Fini" */
+.hero .fini-btn {
+    position: fixed;
+    right: 20px;
+    background-color: #000;
+    color: white;
+    border-radius: 6px;
+    z-index: 10001;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+
+
+/* Sección Funcionalidades */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px auto;
+    width: 80%;
+}
+
+.feature {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efecto hover en tarjetas */
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Alinear botones en la misma línea */
+.feature .feature-btn {
+    margin-top: auto;
+    background: black;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 80%;
+}
+
+/* Sección Testimonios */
+.testimonials {
+    text-align: center;
+    background: #f1f1f1;
+    padding: 50px;
+}
+
+.testimonials .quote {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Sección Equipo */
+.team-section {
+    text-align: center;
+    padding: 50px;
+    background: #f1f1f1;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Aumenta la separación entre los fundadores */
+    flex-wrap: wrap;
+}
+
+
+.team-member {
+    width: 250px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.fini-btn-member {
+    background: #000;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Sección Contacto */
+/* Estilos generales de la sección de contacto */
+.contact-section {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    margin: 50px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Efecto hover para resaltar la sección */
+.contact-section:hover {
+    transform: translateY(-5px); /* Eleva ligeramente la sección */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    background-color: #f9f9f9; /* Cambia el fondo ligeramente */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+}
+
+.contact-btn {
+    background: #000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Avatar de Fini */
+.fini-avatar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background: transparent;
+}
+
+/* Video dentro del avatar */
+.fini-avatar video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Efecto de texto escribiéndose */
+.typewriter::after {
+    content: "|"; 
+    display: inline-block;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Efecto Hover en los campos del formulario */
+.contact-form input:hover, 
+.contact-form select:hover, 
+.contact-form textarea:hover {
+    border-color: #000;  /* Cambia el borde a negro */
+    background-color: #f5f5f5; /* Cambia el fondo a un gris claro */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Agrega un leve resplandor */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto cuando un campo está en foco (cuando el usuario hace clic dentro) */
+.contact-form input:focus, 
+.contact-form select:focus, 
+.contact-form textarea:focus {
+    border-color: #000; /* Mantiene el borde negro */
+    background-color: #ebebeb; /* Fondo más notorio cuando está en foco */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); /* Aumenta el resplandor */
+    outline: none; /* Quita el borde azul predeterminado */
+}
+
+/* Efecto hover en las tarjetas */
+.feature {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Agrega sombra y resalta al hacer hover */
+.feature:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+    background-color: #f9f9f9; /* Cambia ligeramente el color de fondo */
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #000;
+    color: white;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.made-in-mexico {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.made-in-mexico::before {
+    content: "🇲🇽";
+    margin-right: 5px;
+}
+
+/* Footer Expandido */
+.footer-info {
+    background: #f8f8f8;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    width: 20%;
+    min-width: 180px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-column ul li a:hover {
+    color: #000;
+}
+
+/* Redes Sociales en el Footer */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+/* Redes Sociales en el Footer */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Colores originales de cada red social */
+.social-icons .facebook {
+    color: #1877F2; /* Azul Facebook */
+}
+
+.social-icons .instagram {
+    color: #E4405F; /* Rosa Instagram */
+}
+
+.social-icons .linkedin {
+    color: #0077B5; /* Azul LinkedIn */
+}
+
+.social-icons .tiktok {
+    color: #000000; /* Negro TikTok */
+}
+
+/* Efecto Hover para resaltar cada ícono */
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/*Telefonos*/
+
+.phone-container {
+    display: inline-flex; /* Asegura que los elementos estén en la misma línea */
+    align-items: center;
+    border: 1px solid #ccc; /* Borde opcional para mejorar la estética */
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 400px; /* Ajusta el ancho máximo */
+    width: 100%; /* Asegura que no colapse en responsive */
+}
+
+.country-selector {
+    width: 90px; /* Tamaño fijo del select */
+    min-width: 80px;
+    padding: 8px;
+    border: none;
+    background: transparent;
+}
+
+#phone-number {
+    flex: 1; /* Se expande ocupando el espacio restante */
+    padding: 8px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.feature {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33.33% - 20px); /* Distribuye en 3 columnas en pantallas grandes */
+    min-width: 250px; /* Asegura que las tarjetas no sean demasiado pequeñas */
+    text-align: center;
+}
+
+.feature h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Espacio entre icono y texto */
+    font-size: 1.2rem;
+}
+
+.feature-icon {
+    font-size: 1.5rem; /* Tamaño uniforme de los iconos */
+}
+
+.feature h6 {
+    margin: 5px 0 10px 0;
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en líneas nuevas */
+    justify-content: center; /* Centra los elementos */
+    gap: 20px; /* Espaciado entre las tarjetas */
+}
+
+/* **Hacer las tarjetas más pequeñas en pantallas medianas** */
+@media (max-width: 992px) {
+    .feature {
+        width: calc(50% - 20px); /* 2 columnas en tablets */
+    }
+}
+
+/* **Hacer las tarjetas apilarse en pantallas pequeñas** */
+@media (max-width: 600px) {
+    .feature {
+        width: 100%; /* Una sola columna en celulares */
+    }
+}
+
+/* ======= MENÚ RESPONSIVE CORREGIDO ======= */
+
+/* Estilos por defecto (escritorio y base) */
+.nav {
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    background-color: transparent;
+    position: static;
+    width: auto;
+    text-align: center;
+    z-index: 9999;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+}
+
+/* Responsive para pantallas móviles */
+@media (max-width: 768px) {
+    /* Header mobile compactado */
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 10px;
+        background-color: #000;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        height: auto;
+    }
+
+    /* Logo reducido y ajustado */
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        max-width: 45%;
+        overflow: hidden;
+    }
+
+    .logo img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .brand-name {
+        font-size: 0.7rem;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: white;
+    }
+
+    /* Menú comprimido horizontal */
+
+    .nav a {
+        font-size: 0.5rem;
+        padding: 4px 5px;
+        font-weight: bold;
+    }
+
+    /* Hero responsive */
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+        word-break: break-word;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero .fini-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+
+    /* Contacto */
+    .contact-section {
+        width: 90% !important;
+        padding: 30px 15px;
+        margin: 30px auto;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        width: 100% !important;
+    }
+
+    /* Features en columna */
+    .feature {
+        width: 100%;
+    }
+
+    .hero .fini-btn {
+        top: 70px; /* debajo del header */
+        font-size: 0.5rem;
+        padding: 4px 8px;
+    }
+}
+
+/* Estilo para escritorio */
+@media (min-width: 769px) {
+    .hero .fini-btn {
+        top: 65px; /* debajo del header negro */
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+}

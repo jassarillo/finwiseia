@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - FinWise AI</title>
+    <link rel="stylesheet" href="{% static 'core/css/paginaprin.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header fixed-top">
+        <div class="logo">
+            <img src="{% static 'core/images/FINWISE.png' %}" alt="FinWise Logo">
+            <span class="brand-name">FinWise AI</span>
+        </div>
+        <nav class="nav">
+            <a href="#funcionalidades">Funcionalidades</a>
+            <a href="{% url 'Soporte' %}">Soporte</a>
+            <a href="{% url 'home' %}">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero mt-5 text-center">
+        <h1>Blog de FinWise AI</h1>
+        <p>Descubre las últimas tendencias en inteligencia financiera y tecnología aplicada.</p>
+    </section>
+
+    <!-- Contenido del Blog -->
+    <section class="container mt-4">
+        <div class="row">
+            <!-- Artículo 1 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <img src="" alt="Automatización Financiera" class="img-fluid">
+                    <div class="blog-content">
+                        <h3>Automatización Financiera</h3>
+                        <p>Cómo la IA está revolucionando la gestión financiera empresarial.</p>
+                        <a href="" class="btn btn-dark">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 2 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <img src="" alt="Optimización de Flujos de Caja" class="img-fluid">
+                    <div class="blog-content">
+                        <h3>Optimización de Flujos de Caja</h3>
+                        <p>Herramientas digitales para mejorar la gestión de capital.</p>
+                        <a href="" class="btn btn-dark">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 3 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <img src="" alt="Open Banking" class="img-fluid">
+                    <div class="blog-content">
+                        <h3>El impacto del Open Banking</h3>
+                        <p>¿Cómo está transformando el Open Banking el sector financiero en LATAM?</p>
+                        <a href="" class="btn btn-dark">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda fila de artículos -->
+        <div class="row mt-4">
+            <!-- Artículo 4 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <img src="" alt="Análisis Predictivo" class="img-fluid">
+                    <div class="blog-content">
+                        <h3>Análisis Predictivo</h3>
+                        <p>Cómo el Big Data ayuda a las empresas a tomar decisiones estratégicas.</p>
+                        <a href="" class="btn btn-dark">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 5 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <img src="" alt="Seguridad Financiera" class="img-fluid">
+                    <div class="blog-content">
+                        <h3>Seguridad Financiera</h3>
+                        <p>Claves para proteger los datos y evitar fraudes en la era digital.</p>
+                        <a href="" class="btn btn-dark">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 6 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <img src="" alt="Tendencias FinTech" class="img-fluid">
+                    <div class="blog-content">
+                        <h3>Tendencias FinTech</h3>
+                        <p>Innovaciones tecnológicas que están transformando la banca y finanzas.</p>
+                        <a href="" class="btn btn-dark">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de Regreso a Inicio -->
+        <div class="text-center mt-5">
+            <a href="{% url 'PP' %}" class="btn btn-outline-dark btn-lg">
+                <i class="fa fa-home"></i> Volver a Inicio
+            </a>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5 text-center">
+        <p>© 2025 FinWise AI. Todos los derechos reservados.</p>
+        <p class="made-in-mexico">Hecho en México</p>
+    </footer>
+
+</body>
+</html>
